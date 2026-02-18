@@ -12,7 +12,6 @@ pub fn setup_index_css() -> Result<(), TailwindcssErrors> {
     if !index_css.exists() {
         fs::write(&index_css, "@import \"tailwindcss\";\n")
             .map_err(|_| TailwindcssErrors::FailedWriteToIndexCSS)?;
-        print!("added index.css");
         return Ok(());
     }
 
@@ -23,10 +22,6 @@ pub fn setup_index_css() -> Result<(), TailwindcssErrors> {
         let new_contents = format!("@import \"tailwindcss\";\n{}", content);
         let _ =
             fs::write(index_css, new_contents).map_err(|_| TailwindcssErrors::FailedMakingIndexCSS);
-
-        print!("added import statement to index css")
-    } else {
-        print!("import statement exists in index.css")
     }
 
     Ok(())

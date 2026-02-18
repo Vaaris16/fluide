@@ -10,7 +10,7 @@ pub fn get_vite_conf() -> Result<PathBuf, TailwindcssErrors> {
     for file in vite_conf_file {
         let path = cd.join(file);
         if path.exists() {
-            print!("found vite config");
+            print!("found vite config\n\n");
             return Ok(path);
         }
     }

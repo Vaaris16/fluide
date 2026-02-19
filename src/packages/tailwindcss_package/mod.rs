@@ -7,7 +7,7 @@ use crate::packages;
 mod tailwindcss;
 
 pub fn setup_tailwindcss() -> Result<(), TailwindcssErrors> {
-    packages::npm::npm_command("install,tailwindcss,@tailwindcss/vite");
+    let _ = packages::npm::npm_command("install,tailwindcss,@tailwindcss/vite");
     let path = get_vite_conf::get_vite_conf()?;
     get_vite_conf::add_tailwindcss_vite_conf(&path)?;
     setup_css::setup_index_css()?;

@@ -1,4 +1,4 @@
-use clap::{Args, Parser, Subcommand, ValueEnum};
+use clap::{Parser, Subcommand, ValueEnum};
 mod packages;
 use std::env;
 
@@ -61,7 +61,7 @@ fn main() {
                     std::process::exit(1)
                 }
 
-                packages::sass_package::setup(framework, &cd);
+                let _ = packages::sass_package::setup(framework, &cd);
             }
             _ => {
                 print!("not programmed yet")

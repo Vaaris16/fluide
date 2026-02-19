@@ -19,13 +19,13 @@ fluide add [package options]
 
 # Package Options
 
-| Package Name  | Category      | Frameworks Supported                                                         |
-| ------------- | ------------- | ---------------------------------------------------------------------------- |
-| `tailwindcss` | CSS Framework | Vanilla, Vue, React, Preact, Lit, Svelte, Solid, Ember, Qwik, Angular, Marko |
+| Package Name  | Category      | Frameworks Supported                                                         | Usage (Bash)                              |
+| ------------- | ------------- | ---------------------------------------------------------------------------- | ----------------------------------------- |
+| `tailwindcss` | CSS Framework | Vanilla, Vue, React, Preact, Lit, Svelte, Solid, Ember, Qwik, Angular, Marko | `fluide add tailwindcss`                  |
+| `sass`        | CSS Framework | Vanilla, Vue, React, Preact, Lit, Svelte, Solid, Ember, Qwik, Angular, Marko | `fluide add sass --framework <framework>` |
 
 # Requirments
 
 - Node.js (npm must be available)
 - Rust (to build the CLI)
 - Existing Vite project
-

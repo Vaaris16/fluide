@@ -5,6 +5,8 @@ pub enum TailwindcssErrors {
     NotFoundViteConfig,
     ReadViteConfigFailed,
     EditViteConfigFailed,
+
+    FailedToFindTailwindcssImport,
 }
 
 impl fmt::Display for TailwindcssErrors {
@@ -24,6 +26,10 @@ impl fmt::Display for TailwindcssErrors {
 
             TailwindcssErrors::ReadViteConfigFailed => {
                 write!(f, "could not read vite config")
+            }
+
+            TailwindcssErrors::FailedToFindTailwindcssImport => {
+                write!(f, "failed to find tailwindcss import in file")
             }
         }
     }

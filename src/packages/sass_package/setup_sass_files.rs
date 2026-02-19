@@ -27,7 +27,7 @@ pub fn setup_sass_files(
     let file_path = project_root.join(relative_path);
 
     if let Some(parent) = file_path.parent() {
-        fs::create_dir_all(parent).map_err(|_| FileErrors::FailedCreateParentFolders);
+        fs::create_dir_all(parent).map_err(|_| FileErrors::FailedCreateParentFolders)?;
     }
 
     if let Err(err) = make_file(&file_path, content) {

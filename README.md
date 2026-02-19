@@ -11,12 +11,6 @@ No more manual installs, config edits, or duplicate imports — Fluide does it f
 cargo install --git https://github.com/Vaaris16/fluide --branch main
 ```
 
-# Usage
-
-```bash
-fluide add [package options]
-```
-
 # Package Options
 
 | Package Name  | Category      | Frameworks Supported                                                         | Usage (Bash)                              |

@@ -61,7 +61,7 @@ fn main() {
                     std::process::exit(1)
                 }
 
-                let _ = packages::sass_package::setup(framework, &cd);
+                let _ = packages::sass_package::setup_sass(framework, &cd);
             }
             _ => {
                 print!("not programmed yet")

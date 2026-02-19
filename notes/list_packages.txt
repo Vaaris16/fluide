@@ -1,0 +1,61 @@
+category css:
+    tailwindcss // done
+    sass // 
+    styled-components        frameworks: react
+    emotion                  frameworks: react
+    bootstrap
+    unocss
+    windicss
+
+
+
+category code-quality:
+    eslint
+    prettier
+    eslint-config-prettier
+    eslint-plugin-react   frameworks: react
+    eslint-plugin-vue     frameworks: vue
+
+category types:
+    typescript
+    tsconfig-presets
+    @types/node
+
+category state:
+    tanstack-query
+    zustand
+    redux-toolkit
+    pinia               frameworks: vue
+    swr
+
+category routing:
+    react-router        frameworks: react
+    vue-router          frameworks: vue
+    sveltekit-router    frameworks: svelte
+    solid-router        frameworks: solid
+
+category ui:
+    shadcn-ui
+    radix-ui
+    headless-ui
+    mantine
+    chakra-ui
+    material-ui
+
+category icons:
+    lucide
+    heroicons
+    phosphor-icons
+
+category testing:
+    vitest
+    playwright
+    testing-library
+
+category tooling:
+    husky
+    lint-staged
+    commitlint
+    dotenv
+    cross-env
+

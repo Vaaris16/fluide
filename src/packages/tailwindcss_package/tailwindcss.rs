@@ -1,11 +1,8 @@
 use core::fmt;
 
+#[derive(Debug)]
 pub enum TailwindcssErrors {
     CurrentDirFailed,
-    NotFoundViteConfig,
-    ReadViteConfigFailed,
-    EditViteConfigFailed,
-
     FailedToFindTailwindcssImport,
 }
 
@@ -16,21 +13,11 @@ impl fmt::Display for TailwindcssErrors {
                 write!(f, "failed to get current directory")
             }
 
-            TailwindcssErrors::EditViteConfigFailed => {
-                write!(f, "failed to edit vite config file")
-            }
-
-            TailwindcssErrors::NotFoundViteConfig => {
-                write!(f, "could not fine vite config")
-            }
-
-            TailwindcssErrors::ReadViteConfigFailed => {
-                write!(f, "could not read vite config")
-            }
-
             TailwindcssErrors::FailedToFindTailwindcssImport => {
                 write!(f, "failed to find tailwindcss import in file")
             }
         }
     }
 }
+
+impl std::error::Error for TailwindcssErrors {}

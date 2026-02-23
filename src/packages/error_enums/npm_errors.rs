@@ -1,5 +1,4 @@
 use core::fmt;
-use std::process::Command;
 
 pub enum NpmErrors {
     NpmNotFound,
@@ -18,19 +17,4 @@ impl fmt::Display for NpmErrors {
             }
         }
     }
-}
-
-pub fn npm_command(command: &str) -> Result<(), NpmErrors> {
-    let command_parts: Vec<&str> = command.split(",").collect();
-
-    let npm_status = Command::new("npm")
-        .args(command_parts)
-        .status()
-        .map_err(|_| NpmErrors::NpmNotFound)?;
-
-    if !npm_status.success() {
-        return Err(NpmErrors::NpmInstallFailed);
-    }
-
-    Ok(())
 }

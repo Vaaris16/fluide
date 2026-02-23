@@ -1,6 +1,6 @@
 use std::{fs, path::PathBuf};
 
-use crate::packages::file_errors::FileErrors;
+use crate::packages::error_enums::file_errors::FileErrors;
 
 pub fn make_file(path: &PathBuf, content: &str) -> Result<(), FileErrors> {
     if let Some(parent) = path.parent() {

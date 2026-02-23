@@ -2,7 +2,7 @@ use clap::{Parser, Subcommand, ValueEnum};
 mod packages;
 use std::env;
 
-use crate::packages::file_errors;
+use crate::packages::error_enums::file_errors;
 
 #[derive(Parser)]
 #[command(name = "fluide")]
@@ -52,7 +52,7 @@ fn main() {
                     std::process::exit(1);
                 }
 
-                let _ = packages::tailwindcss_package::setup_tailwindcss();
+                let _ = packages::tailwindcss_package::setup_tailwindcss(&cd);
             }
 
             "sass" => {
@@ -62,6 +62,14 @@ fn main() {
                 }
 
                 let _ = packages::sass_package::setup_sass(framework, &cd);
+            }
+            "unocss" => {
+                if framework.is_some() {
+                    eprintln!("the framework flag is not required by uno css");
+                    std::process::exit(1);
+                }
+
+                let _ = packages::unocss_package::setup_unocss(&cd);
             }
             _ => {
                 print!("not programmed yet")

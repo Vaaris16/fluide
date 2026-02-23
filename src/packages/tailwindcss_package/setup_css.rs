@@ -1,7 +1,8 @@
 use std::{env, fs};
 
 use crate::packages::{
-    file_errors::FileErrors, make_file::make_file, tailwindcss_package::TailwindcssErrors,
+    error_enums::file_errors::FileErrors, tailwindcss_package::tailwindcss::TailwindcssErrors,
+    utils::make_file::make_file,
 };
 
 pub fn setup_index_css() -> Result<(), TailwindcssErrors> {

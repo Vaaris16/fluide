@@ -1,10 +1,7 @@
 use file_errors::FileErrors;
 use std::path::PathBuf;
 
-use crate::{
-    Framework,
-    packages::{file_errors, npm},
-};
+use crate::{Framework, packages::error_enums::file_errors, packages::utils::npm};
 mod setup_sass_files;
 
 pub fn setup_sass(framework: Option<Framework>, current_dir: &PathBuf) -> Result<(), FileErrors> {

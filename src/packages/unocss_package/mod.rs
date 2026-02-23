@@ -12,6 +12,13 @@ pub fn setup_unocss(cd: &PathBuf) -> Result<(), Box<dyn std::error::Error>> {
         "import unocss from 'unocss/vite'",
         "unocss(),",
     )?;
+    packages::utils::make_file::make_file(
+        &cd.join("uno.config.ts"),
+        r#"import { defineConfig } from 'unocss'
+
+export default defineConfig({})
+"#,
+    )?;
 
     Ok(())
 }

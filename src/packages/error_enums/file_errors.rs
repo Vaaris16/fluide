@@ -24,3 +24,5 @@ impl fmt::Display for FileErrors {
         }
     }
 }
+
+impl std::error::Error for FileErrors {}

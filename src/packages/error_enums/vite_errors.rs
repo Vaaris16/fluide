@@ -5,6 +5,8 @@ pub enum ViteErrors {
     NotFoundViteConfig,
     ReadViteConfigFailed,
     EditViteConfigFailed,
+
+    NotFoundMainFile,
 }
 
 impl fmt::Display for ViteErrors {
@@ -20,6 +22,10 @@ impl fmt::Display for ViteErrors {
 
             ViteErrors::ReadViteConfigFailed => {
                 write!(f, "could not read vite config")
+            }
+
+            ViteErrors::NotFoundMainFile => {
+                write!(f, "could not find main file")
             }
         }
     }

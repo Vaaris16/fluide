@@ -2,8 +2,9 @@
 
 ## About Fluide
 
-Fluide is a CLI tool that handles the boring, repetitive work of adding popular packages to Vite projects.
-No more manual installs, config edits, or duplicate imports — Fluide does it for you.
+Fluide (French for “fluid”) is a feather-light CLI that improves the Vite development experience by automating repetitive project setup tasks. It aims to keep configuration smooth, predictable, and out of the way.
+
+By handling package installation, configuration edits, and import management automatically, Fluide reduces setup overhead and helps projects stay clean as they grow.
 
 # Installation
 
@@ -17,6 +18,7 @@ cargo install --git https://github.com/Vaaris16/fluide --branch main
 | ------------- | ------------- | ---------------------------------------------------------------------------- | ----------------------------------------- |
 | `tailwindcss` | CSS Framework | Vanilla, Vue, React, Preact, Lit, Svelte, Solid, Ember, Qwik, Angular, Marko | `fluide add tailwindcss`                  |
 | `sass`        | CSS Framework | Vanilla, Vue, React, Preact, Lit, Svelte, Solid, Ember, Qwik, Angular, Marko | `fluide add sass --framework <framework>` |
+| `unocss`      | CSS Framework | Vanilla, Vue, React, Preact, Lit, Svelte, Solid, Ember, Qwik, Angular, Marko | `fluide add unocss`                       |
 
 # Requirments
 

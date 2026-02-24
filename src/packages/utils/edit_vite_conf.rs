@@ -8,8 +8,15 @@ pub fn edit_vite_conf(path: &PathBuf, import_line: &str, plugin: &str) -> Result
         content = format!("{}\n{}", import_line, content)
     }
 
-    if !content.contains("plugins:[") && !content.contains(plugin) {
-        content = content.replace("plugins: [", &format!("plugins: [{}, ", plugin))
+    if content.contains("plugins: [") && !content.contains(plugin) {
+        content = content.replace("plugins: [", &format!("plugins: [{}, ", plugin));
+    }
+
+    if content.contains("plugins: [") {
+        content = content.replace(
+            "defineConfig({",
+            &format!("defineConfig({{\n  plugins: [{}],", plugin),
+        );
     }
 
     let _ = fs::write(path, content).map_err(|_| ViteErrors::EditViteConfigFailed);

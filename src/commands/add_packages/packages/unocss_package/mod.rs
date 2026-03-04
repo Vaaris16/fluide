@@ -1,6 +1,6 @@
 use std::path::PathBuf;
 
-use crate::commands::add_packages::utils;
+use crate::commands::utils;
 
 pub fn setup_unocss(cd: &PathBuf) -> Result<(), Box<dyn std::error::Error>> {
     let _ = utils::npm::npm_command("install,-D,unocss");

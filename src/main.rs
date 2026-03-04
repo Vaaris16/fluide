@@ -2,7 +2,7 @@ use clap::{Parser, Subcommand, ValueEnum};
 mod commands;
 use std::env;
 
-use crate::commands::add_packages::packages::error_enums::file_errors;
+use crate::commands::error_enums::file_errors;
 
 #[derive(Parser)]
 #[command(name = "fluide")]
@@ -19,6 +19,17 @@ enum Commands {
 
         #[arg(short, long, value_enum)]
         framework: Option<Framework>,
+    },
+
+    Clean {
+        #[arg(long)]
+        image: bool,
+
+        #[arg(long)]
+        default: bool,
+
+        #[arg(long)]
+        all: bool,
     },
 }
 
@@ -76,5 +87,13 @@ fn main() {
                 print!("not programmed yet")
             }
         },
+
+        Commands::Clean {
+            image,
+            default,
+            all,
+        } => {
+            todo!()
+        }
     }
 }

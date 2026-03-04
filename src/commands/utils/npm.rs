@@ -1,4 +1,4 @@
-use crate::commands::add_packages::packages::error_enums::npm_errors::NpmErrors;
+use crate::commands::error_enums::npm_errors::NpmErrors;
 use std::process::Command;
 
 pub fn npm_command(command: &str) -> Result<(), NpmErrors> {

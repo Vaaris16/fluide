@@ -2,7 +2,7 @@ pub mod setup_css;
 
 use std::path::PathBuf;
 
-use crate::commands::add_packages::utils;
+use crate::commands::utils;
 mod tailwindcss;
 
 pub fn setup_tailwindcss(cd: &PathBuf) -> Result<(), Box<dyn std::error::Error>> {

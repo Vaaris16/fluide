@@ -1,10 +1,9 @@
 use std::{env, fs};
 
-use crate::commands::add_packages::packages::{
-    error_enums::file_errors::FileErrors, tailwindcss_package::tailwindcss::TailwindcssErrors,
-};
+use crate::commands::add_packages::packages::tailwindcss_package::tailwindcss::TailwindcssErrors;
 
-use crate::commands::add_packages::utils::make_file::make_file;
+use crate::commands::utils::make_file::make_file;
+use crate::file_errors::FileErrors;
 
 pub fn setup_index_css() -> Result<(), TailwindcssErrors> {
     let cd = env::current_dir().map_err(|_| TailwindcssErrors::CurrentDirFailed)?;

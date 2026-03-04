@@ -1,6 +1,6 @@
 use std::path::PathBuf;
 
-use crate::commands::add_packages::packages::error_enums::vite_errors::ViteErrors;
+use crate::commands::error_enums::vite_errors::ViteErrors;
 
 pub fn find_main(cd: &PathBuf) -> Result<PathBuf, ViteErrors> {
     let candidates = ["src/main.ts", "src/main.tsx", "src/main.js", "src/main.jsx"];

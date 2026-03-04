@@ -1,8 +1,8 @@
 use std::{fs, path::PathBuf};
 
 use crate::{
-    Framework, commands::add_packages::packages::error_enums::file_errors::FileErrors,
-    commands::add_packages::utils::make_file::make_file,
+    Framework, commands::error_enums::file_errors::FileErrors,
+    commands::utils::make_file::make_file,
 };
 
 pub fn setup_sass_files(

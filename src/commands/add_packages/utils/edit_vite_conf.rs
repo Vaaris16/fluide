@@ -1,4 +1,4 @@
-use crate::packages::error_enums::vite_errors::ViteErrors;
+use crate::commands::add_packages::packages::error_enums::vite_errors::ViteErrors;
 use std::{fs, path::PathBuf};
 
 pub fn edit_vite_conf(path: &PathBuf, import_line: &str, plugin: &str) -> Result<(), ViteErrors> {

@@ -1,8 +1,8 @@
 use clap::{Parser, Subcommand, ValueEnum};
-mod packages;
+mod commands;
 use std::env;
 
-use crate::packages::error_enums::file_errors;
+use crate::commands::add_packages::packages::error_enums::file_errors;
 
 #[derive(Parser)]
 #[command(name = "fluide")]
@@ -52,7 +52,8 @@ fn main() {
                     std::process::exit(1);
                 }
 
-                let _ = packages::tailwindcss_package::setup_tailwindcss(&cd);
+                let _ =
+                    commands::add_packages::packages::tailwindcss_package::setup_tailwindcss(&cd);
             }
 
             "sass" => {
@@ -61,7 +62,7 @@ fn main() {
                     std::process::exit(1)
                 }
 
-                let _ = packages::sass_package::setup_sass(framework, &cd);
+                let _ = commands::add_packages::packages::sass_package::setup_sass(framework, &cd);
             }
             "unocss" => {
                 if framework.is_some() {
@@ -69,7 +70,7 @@ fn main() {
                     std::process::exit(1);
                 }
 
-                let _ = packages::unocss_package::setup_unocss(&cd);
+                let _ = commands::add_packages::packages::unocss_package::setup_unocss(&cd);
             }
             _ => {
                 print!("not programmed yet")

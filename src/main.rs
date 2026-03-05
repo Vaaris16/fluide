@@ -30,6 +30,9 @@ enum Commands {
 
         #[arg(long)]
         all: bool,
+
+        #[arg(short, long, value_enum)]
+        framework: Option<Framework>,
     },
 }
 
@@ -92,8 +95,16 @@ fn main() {
             image,
             default,
             all,
+            framework,
         } => {
-            todo!()
+            if image {
+                if let Some(fw) = framework {
+                    let _ = commands::clean::setup_cleaner(&cd, fw);
+                } else {
+                    eprintln!("the framework flag is required by the clean function");
+                    std::process::exit(1)
+                }
+            }
         }
     }
 }
